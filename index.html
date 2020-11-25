@@ -9,8 +9,9 @@
         href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="flexbox-shorthand.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
     <link rel="stylesheet" href="myutil.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
         font-1 {
             font-family: 'Raleway', sans-serif;
@@ -68,7 +69,7 @@
         .section-2 {
             background-color: #010101;
             padding: 2rem;
-            height: 100vh;
+            height: 100%;
 
         }
 
@@ -80,28 +81,62 @@
             width: 100%;
             display: grid;
             padding: 1rem;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
             grid-template-rows: 1fr;
             grid-gap: 2rem;
 
         }
 
         .content .cards .card {
-            color: #010101;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             background-color: #0f0f0f;
             border-radius: 5px;
-            padding: 1rem;
             font-family: font-family: 'Source Sans Pro', sans-serif;
+
+
         }
 
         .content .cards .card:hover {
-            perspective: 10vh;
             background-color: #383838;
             transition: 300ms ease-in-out;
+            transform: rotate(-20deg);
+
         }
 
-        .content .cards .card h1 {
-            color: #010101;
+        .content .cards .card h5 {
+            color: #fff;
+
+        }
+
+        .cmn-t-underline {
+            position: relative;
+            color: #892cdc;
+        }
+
+        .cmn-t-underline:after {
+            display: block;
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 0;
+            height: 10px;
+            background-color: #52057b;
+            content: "";
+            -webkit-transition: all 0.2s;
+            -moz-transition: all 0.2s;
+            -o-transition: all 0.2s;
+            transition: all 0.2s;
+        }
+
+        .cmn-t-underline:hover {
+            color: #52057b;
+        }
+
+        .cmn-t-underline:hover:after {
+            width: 100%;
         }
     </style>
 </head>
@@ -111,8 +146,9 @@
         <div class="section">
             <div class="slide">
                 <div class="section-1">
-                    <div class="text animate__animated animate__fadeInUp">
-                        <h1 class="font-1"> <span style="color: gray;" class="">I'm</span> ankit .
+                    <div class="text" data-aos="fade-up" data-aos-duration="300">
+                        <h1 class="font-1"> <span style="color: gray;" class="">I'm</span> <span
+                                class="cmn-t-underline">ankit.</span>
                         </h1>
                         <center>
                             <p class="font-2 txt-justify">
@@ -128,88 +164,77 @@
             </div>
             <div class="slide">
                 <div class="section-2">
-                    <div class="txt">
+                    <div class="txt" data-aos="fade-up">
                         <h3 style="color: #fff; font-family: 'Source Sans Pro', sans-serif;" class="font-2"><img
                                 src="notebook.png" alt=""> <br>
                             Projects
                         </h3>
                         <br><br>
                     </div>
-                    <div align="center" class="content">
-                        <div class="cards ">
+                    <div class="content" data-aos="fade-up">
+                        <div class="cards">
                             <div class="card">
-                                <div class="img-wrap"><img src="https://dummyimage.com/500x300/#ddd/fff" alt=""></div>
+                                <img src="https://dummyimage.com/500x300/#ddd/fff" alt="">
 
-                                <div class="text">
-                                    <h5>Hamilton Design</h5>
-                                </div>
                             </div>
                             <div class="card">
-                                <div class="img-wrap"><img src="https://dummyimage.com/500x300/#ddd/fff" alt=""></div>
+                                <img src="https://dummyimage.com/500x300/#ddd/fff" alt="">
 
-                                <div class="text">
-                                    <h5>Hamilton Design</h5>
-                                </div>
                             </div>
                             <div class="card">
-                                <div class="img-wrap"><img src="https://dummyimage.com/500x300/#ddd/fff" alt=""></div>
+                                <img src="https://dummyimage.com/500x300/#ddd/fff" alt="">
 
-                                <div class="text">
-                                    <h5>Hamilton Design</h5>
-                                </div>
                             </div>
                             <div class="card">
-                                <div class="img-wrap"><img src="https://dummyimage.com/500x300/#ddd/fff" alt=""></div>
+                                <img src="https://dummyimage.com/500x300/#ddd/fff" alt="">
 
-                                <div class="text">
-                                    <h5>Hamilton Design</h5>
-                                </div>
                             </div>
-                            <div class="card">
-                                <div class="img-wrap"><img src="https://dummyimage.com/500x300/#ddd/fff" alt=""></div>
 
-                                <div class="text">
-                                    <h5>Hamilton Design</h5>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="img-wrap"><img src="https://dummyimage.com/500x300/#ddd/fff" alt=""></div>
-
-                                <div class="text">
-                                    <h5>Hamilton Design</h5>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="slide">
                 <div class="section-2">
-                    <h3 class="font-2 "><img src="camera.png" alt=""> <br>
-                        Photography
-                    </h3>
+                    <div class="txt" data-aos="fade-up">
+                        <h3 style="color:
+                         #fff; font-family: 'Source Sans Pro', sans-serif;" class="font-2"><img src="book.png" alt="">
+                            <br>
+                            Favourite Books
+                        </h3>
+                        <br><br>
+                    </div>
                 </div>
             </div>
             <div class="slide">
                 <div class="section-2">
-                    <div class="txt">
-                        <h3 class="font-2"><img src="book.png" alt=""><br>
-                            Favourite Books
+                    <div class="txt" data-aos="fade-up">
+                        <h3 style="color: #fff; font-family: 'Source Sans Pro', sans-serif;" class="font-2"><img
+                                src="headphone.png" alt=""> <br>
+                            Favourite Music
                         </h3>
+                        <br><br>
                     </div>
 
                 </div>
             </div>
             <div class="slide">
                 <div class="section-2">
-                    <h3 class="font-2"><img src="headphone.png" alt=""><br>
-                        Favourite Music
-                    </h3>
+                    <div class="txt" data-aos="fade-up">
+                        <h3 style="color: #fff; font-family: 'Source Sans Pro', sans-serif;" class="font-2"><img
+                                src="camera.png" alt=""> <br>
+                            Photography
+                        </h3>
+                        <br><br>
+                    </div>
                 </div>
             </div>
 
         </div>
-
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
 </body>
 
 </html>
